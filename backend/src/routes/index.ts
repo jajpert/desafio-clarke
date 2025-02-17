@@ -1,6 +1,6 @@
 import { Router } from "express";
-import fornecedores from "routes/fornecedores";
-import { notFound } from "middlewares/notFound";
+import fornecedores from "routes/fornecedores.js";
+import { notFound } from "middlewares/notFound.js";
 
 const router = Router();
 

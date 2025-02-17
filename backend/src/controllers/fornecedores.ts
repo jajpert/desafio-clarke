@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import * as fornecedorService from "../services/fornecedor";
+import * as fornecedorService from "../services/fornecedor.js";
 import type { Request, Response } from "express";
-import type { Fornecedor } from "types/fornecedor";
-import { excluirImagem, uploadImagem } from "../services/storage";
-import db from "db/db";
-import { validarCamposObrigatorios } from "utils/validaCampos";
+import type { Fornecedor } from "types/fornecedor.js";
+import { excluirImagem, uploadImagem } from "../services/storage.js";
+import db from "db/db.js";
+import { validarCamposObrigatorios } from "utils/validaCampos.js";
 
 export const listarFornecedores = async (
   req: Request,

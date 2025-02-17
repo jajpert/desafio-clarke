@@ -1,5 +1,5 @@
-import db from "db/db";
-import type { Fornecedor } from "types/fornecedor";
+import db from "db/db.js";
+import type { Fornecedor } from "types/fornecedor.js";
 
 export async function listarFornecedores(): Promise<Fornecedor[]> {
   return await db<Fornecedor>("fornecedores").select("*");

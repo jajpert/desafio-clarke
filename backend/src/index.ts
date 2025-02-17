@@ -1,8 +1,8 @@
 import express from "express";
-import router from "./routes";
-import shutdown from "db/shutdown";
-import configCors from "middlewares/configCors";
-import db from "db/db";
+import router from "./routes/index.js";
+import shutdown from "db/shutdown.js";
+import configCors from "middlewares/configCors.js";
+import db from "db/db.js";
 
 const port = Number(process.env.PORT) ?? 3000;
 const url = process.env.URL ?? "localhost";

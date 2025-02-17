@@ -1,6 +1,6 @@
-import asyncHandler from "../utils/asyncHandler"
+import asyncHandler from "../utils/asyncHandler.js"
 import { Router } from "express";
-import upload from "../middlewares/multer";
+import upload from "../middlewares/multer.js";
 import {
   listarFornecedores,
   buscarFornecedorPorId,
@@ -8,7 +8,7 @@ import {
   atualizarFornecedor,
   deletarFornecedor,
   fornecedoresPorConsumo
-} from "../controllers/fornecedores";
+} from "../controllers/fornecedores.js";
 
 const router = Router();
 
