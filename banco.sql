@@ -1,17 +1,11 @@
 CREATE DATABASE desafio_clarke;
 
-CREATE TABLE usuarios (
-  id SERIAL PRIMARY KEY,
-	email VARCHAR,
-  senha TEXT
-);
-
 CREATE TABLE fornecedores (
   id SERIAL PRIMARY KEY,
 	nome VARCHAR,
   logo VARCHAR,
-  estado VARCHAR,
-  custo MONEY,
+  estado CHAR(2),
+  custo DECIMAL,
   minimo DECIMAL,
   num_clientes INT,
   nota DECIMAL

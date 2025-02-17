@@ -1,11 +1,10 @@
 import { Router } from "express";
+import fornecedores from "routes/fornecedores";
+import { notFound } from "middlewares/notFound";
 
 const router = Router();
 
-router.get("/frase", (req, res) => {
-  res.json({
-    mensagem: "A vida é muito curta para ser pequena"
-  });
-});
+router.use('/ap1/v1/fornecedores', fornecedores);
+router.use(notFound);
 
 export default router;
