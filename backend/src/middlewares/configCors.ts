@@ -3,7 +3,7 @@ import cors, { type CorsOptions } from 'cors'
 
 
 export default (port: number, isHttps: boolean): RequestHandler => {
-  const whitelist = new Set(isHttps ? [`https://localhost:${port}`] : [`http://localhost:${port}`]);
+  const whitelist = new Set(isHttps ? [`https://localhost:${port}`, 'https://localhost:3000'] : [`http://localhost:${port}`, 'http://localhost:3000']);
 
   const corsOptions: CorsOptions = {
     origin: (origin, callback) => {
