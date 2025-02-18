@@ -21,7 +21,6 @@ export async function atualizarFornecedor(
   dados: Partial<Omit<Fornecedor, "id">>
 ): Promise<Fornecedor | undefined> {
   const [fornecedorAtualizado] = await db<Fornecedor>("fornecedores").where({ id }).update(dados).returning("*");
-  console.log("atualizado", fornecedorAtualizado);
   return fornecedorAtualizado;
 }
 

@@ -103,8 +103,6 @@ export const atualizarFornecedor = async (
       return res.status(404).json({ error: "Fornecedor não encontrado" });
     }
 
-    console.log();
-
     let logoUrl: string | undefined = fornecedorExistente.logo;
 
     if (req.file) {
@@ -178,15 +176,12 @@ export const deletarFornecedor = async (
   }
 };
 
-export const fornecedoresPorConsumo: (
-  req: Request,
-  res: Response
-) => Promise<Response> = async (
+export const fornecedoresPorConsumo = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
   try {
-    const consumo = Number(req.query.consumo);
+    const consumo = Number(req.params.consumo);
 
     if (isNaN(consumo) || consumo <= 0) {
       return res
@@ -194,10 +189,11 @@ export const fornecedoresPorConsumo: (
         .json({ error: "O consumo informado deve ser um número maior que 0." });
     }
 
-    const fornecedores =
-      await fornecedorService.listarFornecedoresPorConsumo(consumo);
+    const fornecedores = await fornecedorService.listarFornecedoresPorConsumo(consumo);
+
     return res.json(fornecedores);
   } catch (error) {
+    console.error("Erro no backend:", error);
     return res
       .status(500)
       .json({ error: "Erro ao buscar fornecedores por consumo" });

@@ -4,7 +4,7 @@ import shutdown from "db/shutdown.js";
 import configCors from "middlewares/configCors.js";
 import db from "db/db.js";
 
-const port = Number(process.env.PORT) ?? 3000;
+const port = Number(process.env.PORT) ?? 3003;
 const url = process.env.URL ?? "localhost";
 let isHttps = false;
 
@@ -12,7 +12,8 @@ const app = express();
 
 if (app.get('env') === 'production') {
   app.set('trust proxy', 1); // trust first proxy
-  isHttps = true;
+  // isHttps = true;
+  isHttps = false;
 }
 
 app.use(express.json());

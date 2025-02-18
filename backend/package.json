@@ -7,7 +7,8 @@
     "build": "rimraf /var/www/desafio-clarke/backend && tsup",
     "postbuild": "cp /home/user/desafio-clarke/backend/package.json /var/www/desafio-clarke/backend && cp /home/user/desafio-clarke/backend/.env /var/www/desafio-clarke/backend && cd /var/www/desafio-clarke/backend && npm install --production",
     "prestart": "npm run build",
-    "start": "node /var/www/desafio-clarke/backend/index.js"
+    "start": "node /var/www/desafio-clarke/backend/index.js",
+    "test": "jest"
   },
   "jest": {
     "preset": "ts-jest",

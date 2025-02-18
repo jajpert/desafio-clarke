@@ -17,6 +17,6 @@ router.get("/:id", asyncHandler(buscarFornecedorPorId));
 router.post("/", upload.single("logo"), asyncHandler(criarFornecedor));
 router.put("/:id", asyncHandler(atualizarFornecedor));
 router.delete("/:id", asyncHandler(deletarFornecedor));
-router.get("/consumo", asyncHandler(fornecedoresPorConsumo));
+router.get("/consumo/:consumo", asyncHandler(fornecedoresPorConsumo));
 
 export default router;
