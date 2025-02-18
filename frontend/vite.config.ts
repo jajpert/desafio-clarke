@@ -7,7 +7,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
-    outDir: "/var/www/desafio-clarke",
+    outDir: "dist",
     emptyOutDir: true,
   },
   server: {
